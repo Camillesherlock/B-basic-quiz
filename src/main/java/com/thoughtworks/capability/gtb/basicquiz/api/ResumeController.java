@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.naming.CommunicationException;
+import javax.validation.Valid;
 import java.util.List;
 
 @RequestMapping
@@ -26,7 +27,7 @@ public class ResumeController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public User addUser(@RequestBody User user){
+    public User addUser(@RequestBody @Valid User user){
         return resumeService.addUser(user);
     }
 
@@ -36,7 +37,7 @@ public class ResumeController {
     }
     @PostMapping("/{userId}/educations")
     @ResponseStatus(HttpStatus.CREATED)
-    public Education addEducation(@PathVariable long userId, @RequestBody Education education){
+    public Education addEducation(@PathVariable long userId, @RequestBody @Valid Education education){
         return resumeService.addEducation(userId, education);
     }
 }
