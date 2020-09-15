@@ -25,7 +25,7 @@ public class ResumeController {
         User user1 = resumeService.getUserById(id);
         return user1;
     }
-    @PostMapping
+    @PostMapping("/users")
     @ResponseStatus(HttpStatus.CREATED)
     public User addUser(@RequestBody @Valid User user){
         return resumeService.addUser(user);
