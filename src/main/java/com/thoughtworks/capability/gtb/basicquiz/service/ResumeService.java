@@ -5,6 +5,7 @@ import com.thoughtworks.capability.gtb.basicquiz.domain.User;
 import com.thoughtworks.capability.gtb.basicquiz.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import javax.naming.CommunicationException;
 import java.util.List;
 
 @Service
@@ -15,17 +16,25 @@ public class ResumeService {
         this.userRepository = userRepository;
     }
 
-    public User getUserById(long id) {
-        return userRepository.findById(id);
+    public User getUserById(long id) throws CommunicationException {
+        if(userRepository.findById(id) !=null){
+        return userRepository.findById(id);}
+        else {
+            throw new CommunicationException("user is not exist");
+        }
     }
 
     public User addUser(User user) {
         return userRepository.addUser(user);
     }
 
-    public List<Education> getEducations(long userId) {
+    public List<Education> getEducations(long userId) throws CommunicationException {
         List<Education> educations = userRepository.getEducationsByUserId(userId);
-        return educations;
+        if(educations != null){
+        return educations;}
+        else {
+            throw new CommunicationException("education is not exist");
+        }
     }
 
     public Education addEducation(long userId, Education education) {

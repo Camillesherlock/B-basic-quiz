@@ -31,7 +31,7 @@ public class ResumeController {
     }
 
     @GetMapping("/{userId}/educations")
-    public List<Education> getEducations(@PathVariable long userId) {
+    public List<Education> getEducations(@PathVariable long userId) throws CommunicationException {
         return resumeService.getEducations(userId);
     }
     @PostMapping("/{userId}/educations")
