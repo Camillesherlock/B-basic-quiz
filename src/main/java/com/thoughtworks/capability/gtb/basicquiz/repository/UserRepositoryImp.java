@@ -20,7 +20,12 @@ public class UserRepositoryImp implements UserRepository {
 
     @Override
     public User findById(Long id) {
-        User user = users.get(id);
-        return user;
+        return users.get(id);
+    }
+    @Override
+    public User addUser(User user) {
+        user.setId(users.size()+1);
+        users.put(user.getId(),user);
+        return users.get(users.size()-1);
     }
 }

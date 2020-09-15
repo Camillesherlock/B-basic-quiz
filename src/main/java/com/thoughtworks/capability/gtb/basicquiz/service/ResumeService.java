@@ -15,4 +15,8 @@ public class ResumeService {
         User byId = userRepository.findById(id);
         return byId;
     }
+
+    public User addUser(User user) {
+        return userRepository.addUser(user);
+    }
 }
