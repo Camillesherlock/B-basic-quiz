@@ -1,8 +1,15 @@
 package com.thoughtworks.capability.gtb.basicquiz.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Education {
-    private Long userId;
-    private Long year;
+    private long userId;
+    private long year;
     private String title;
     private String description;
 }
