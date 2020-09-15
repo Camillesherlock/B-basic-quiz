@@ -1,11 +1,13 @@
 package com.thoughtworks.capability.gtb.basicquiz.api;
 
+import com.thoughtworks.capability.gtb.basicquiz.domain.Education;
 import com.thoughtworks.capability.gtb.basicquiz.domain.User;
 import com.thoughtworks.capability.gtb.basicquiz.service.ResumeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.naming.CommunicationException;
+import java.util.List;
 
 @RequestMapping
 @RestController
@@ -25,6 +27,11 @@ public class ResumeController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public User addUser(@RequestBody User user){
-        return ResumeService.addUser(user);
+        return resumeService.addUser(user);
+    }
+
+    @GetMapping("/{userId}/educations")
+    public List<Education> getEducations(@PathVariable long userId) {
+        return resumeService.getEducations(userId);
     }
 }

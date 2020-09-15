@@ -1,8 +1,11 @@
 package com.thoughtworks.capability.gtb.basicquiz.service;
 
+import com.thoughtworks.capability.gtb.basicquiz.domain.Education;
 import com.thoughtworks.capability.gtb.basicquiz.domain.User;
 import com.thoughtworks.capability.gtb.basicquiz.repository.UserRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ResumeService {
@@ -18,5 +21,10 @@ public class ResumeService {
 
     public User addUser(User user) {
         return userRepository.addUser(user);
+    }
+
+    public List<Education> getEducations(long userId) {
+        List<Education> educations = userRepository.getEducationsByUserId(userId);
+            return educations;
     }
 }
