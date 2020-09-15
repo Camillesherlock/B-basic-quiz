@@ -10,13 +10,13 @@ import java.util.List;
 @Service
 public class ResumeService {
     private final UserRepository userRepository;
+
     public ResumeService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     public User getUserById(long id) {
-        User byId = userRepository.findById(id);
-        return byId;
+        return userRepository.findById(id);
     }
 
     public User addUser(User user) {
@@ -25,6 +25,11 @@ public class ResumeService {
 
     public List<Education> getEducations(long userId) {
         List<Education> educations = userRepository.getEducationsByUserId(userId);
-            return educations;
+        return educations;
+    }
+
+    public Education addEducation(long userId, Education education) {
+        education.setUserId(userId);
+        return userRepository.addEducation(education);
     }
 }

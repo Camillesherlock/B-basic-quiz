@@ -5,6 +5,7 @@ import com.thoughtworks.capability.gtb.basicquiz.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Repository
 public class UserRepositoryImp implements UserRepository {
@@ -19,7 +20,7 @@ public class UserRepositoryImp implements UserRepository {
         }
     };
     private long idInit=1;
-    private List<Education> educationInit = new ArrayList<Education>(){
+    private List<Education> educations = new ArrayList<Education>(){
         {
             add(new Education(1, 1990, "I was born in Katowice",
                     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. " +
@@ -34,11 +35,7 @@ public class UserRepositoryImp implements UserRepository {
                     "Ducimus, aliquam tempore autem itaque et accusantium!"));
         }
     };
-    private final Map<Long,List<Education>> educations = new HashMap<Long, List<Education>>(){
-        {
-            put(idInit,educationInit);
-        }
-    };
+
     @Override
     public User findById(Long id) {
         return users.get(id);
@@ -47,10 +44,18 @@ public class UserRepositoryImp implements UserRepository {
     public User addUser(User user) {
         user.setId(users.size()+1);
         users.put(user.getId(),user);
-        return users.get(users.size()-1);
+        return users.get(users.size());
     }
     @Override
     public List<Education> getEducationsByUserId(long id){
-        return educations.get(id);
-    };
+        return educations.stream()
+                .filter(education -> education.getUserId() == id).collect(Collectors.toList());
+    }
+
+    @Override
+    public Education addEducation(Education education){
+        educations.add(education);
+        return educations.get(educations.size()-1);
+    }
+
 }

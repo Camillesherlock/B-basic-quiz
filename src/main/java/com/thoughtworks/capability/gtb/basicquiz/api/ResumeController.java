@@ -34,4 +34,9 @@ public class ResumeController {
     public List<Education> getEducations(@PathVariable long userId) {
         return resumeService.getEducations(userId);
     }
+    @PostMapping("/{userId}/educations")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Education addEducation(@PathVariable long userId, @RequestBody Education education){
+        return resumeService.addEducation(userId, education);
+    }
 }
