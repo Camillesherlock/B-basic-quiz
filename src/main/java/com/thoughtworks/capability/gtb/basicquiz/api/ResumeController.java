@@ -31,11 +31,11 @@ public class ResumeController {
         return resumeService.addUser(user);
     }
 
-    @GetMapping("/{userId}/educations")
+    @GetMapping("/users/{userId}/educations")
     public List<Education> getEducations(@PathVariable long userId) throws CommunicationException {
         return resumeService.getEducations(userId);
     }
-    @PostMapping("/{userId}/educations")
+    @PostMapping("/users/{userId}/educations")
     @ResponseStatus(HttpStatus.CREATED)
     public Education addEducation(@PathVariable long userId, @RequestBody @Valid Education education){
         return resumeService.addEducation(userId, education);
