@@ -20,6 +20,7 @@ public class UserRepositoryImp implements UserRepository {
         }
     };
     private long idInit=1;
+    // GTB: UserRepository 里单独存储了 users 和 educations，这样设计有点奇怪
     private List<Education> educations = new ArrayList<Education>(){
         {
             add(new Education(1, 1990, "I was born in Katowice",
@@ -42,6 +43,7 @@ public class UserRepositoryImp implements UserRepository {
     }
     @Override
     public User addUser(User user) {
+        // GTB: - 生成 Id 的方式不好，跟组里人讨论一下
         user.setId(users.size()+1);
         users.put(user.getId(),user);
         return users.get(users.size());
@@ -54,6 +56,7 @@ public class UserRepositoryImp implements UserRepository {
 
     @Override
     public Education addEducation(Education education){
+        // GTB: - 不要放进去再取出来，别的办法不行吗？还是有什么特别考虑？
         educations.add(education);
         return educations.get(educations.size()-1);
     }

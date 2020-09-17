@@ -22,6 +22,7 @@ public class ResumeController {
 
     @GetMapping("/users/{id}")
     public User getUserInformation(@PathVariable Long id) throws CommunicationException {
+        // GTB: - 不需要 user1 这个变量，直接 inline 掉
         User user1 = resumeService.getUserById(id);
         return user1;
     }
