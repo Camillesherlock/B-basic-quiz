@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Repository
 public class UserRepositoryImp implements UserRepository {
     private User user = new User(1, "KAMIL", 24,
-            "https://inews.gtimg.com/newsapp_match/0/3581582328/0",
+            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600185963140&di=01c397d9c775f3f0077367c299047c5b&imgtype=0&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1627345097%2C3823221179%26fm%3D214%26gp%3D0.jpg",
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, non, " +
                     "dolorem, cumque distinctio magni quam expedita velit laborum sunt amet facere tempora ut " +
                     "fuga aliquam ad asperiores voluptatem dolorum! Quasi.");
