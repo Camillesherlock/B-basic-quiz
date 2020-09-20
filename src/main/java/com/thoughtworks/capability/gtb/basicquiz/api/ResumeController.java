@@ -21,8 +21,8 @@ public class ResumeController {
     }
 
     @GetMapping("/users/{id}")
-    public User getUserInformation(@PathVariable Long id) throws CommunicationException {
-        User user1 = resumeService.getUserById(id);
+    public User getUserInformation(@PathVariable Long id)  {
+        User user1 = resumeService.getUser(id);
         return user1;
     }
     @PostMapping("/users")
