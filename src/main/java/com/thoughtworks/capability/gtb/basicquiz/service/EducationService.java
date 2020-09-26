@@ -3,6 +3,7 @@ package com.thoughtworks.capability.gtb.basicquiz.service;
 import com.thoughtworks.capability.gtb.basicquiz.dto.EducationDTO;
 import com.thoughtworks.capability.gtb.basicquiz.entity.Education;
 import com.thoughtworks.capability.gtb.basicquiz.entity.User;
+import com.thoughtworks.capability.gtb.basicquiz.exception.UserNotExistException;
 import com.thoughtworks.capability.gtb.basicquiz.repository.EducationRepository;
 import com.thoughtworks.capability.gtb.basicquiz.repository.UserRepository;
 import com.thoughtworks.capability.gtb.basicquiz.util.ConvertTool;
@@ -45,6 +46,6 @@ public class EducationService {
             Education savedEducation = educationRepository.save(education);
             return ConvertTool.convert(savedEducation, EducationDTO.class);
         }
-        throw new CommunicationException("user is not exist");
+        throw new UserNotExistException("user is not exist");
     }
 }

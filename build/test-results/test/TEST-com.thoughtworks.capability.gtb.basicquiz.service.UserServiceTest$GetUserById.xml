@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.thoughtworks.capability.gtb.basicquiz.service.UserServiceTest$GetUserById" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-26T12:54:20" hostname="192.168.0.100" time="0.005">
+  <properties/>
+  <testcase name="should_return_user_when_get_user_by_id()" classname="com.thoughtworks.capability.gtb.basicquiz.service.UserServiceTest$GetUserById" time="0.005"/>
+  <system-out><![CDATA[20:54:20.005 [Test worker] DEBUG org.apache.commons.beanutils.converters.LongConverter - Converting 'Long' value '1' to type 'Long'
+20:54:20.005 [Test worker] DEBUG org.apache.commons.beanutils.converters.LongConverter -     No conversion required, value is already a Long
+20:54:20.005 [Test worker] DEBUG com.github.dozermapper.core.fieldmap.FieldMap - Getting ready to invoke write method on the destination object. Dest Obj: UserDTO, Dest value: 1
+20:54:20.005 [Test worker] DEBUG com.github.dozermapper.core.MappingProcessor - MAPPED: User.id --> UserDTO.id    VALUES: 1 --> 1    MAPID: 
+20:54:20.005 [Test worker] DEBUG com.github.dozermapper.core.fieldmap.FieldMap - Getting ready to invoke write method on the destination object. Dest Obj: UserDTO, Dest value: user test
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.MappingProcessor - MAPPED: User.description --> UserDTO.description    VALUES: user test --> user test    MAPID: 
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.fieldmap.FieldMap - Getting ready to invoke write method on the destination object. Dest Obj: UserDTO, Dest value: http://...
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.MappingProcessor - MAPPED: User.avatar --> UserDTO.avatar    VALUES: http://... --> http://...    MAPID: 
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.fieldmap.FieldMap - Getting ready to invoke write method on the destination object. Dest Obj: UserDTO, Dest value: 11
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.MappingProcessor - MAPPED: User.name --> UserDTO.name    VALUES: 11 --> 11    MAPID: 
+20:54:20.006 [Test worker] DEBUG org.apache.commons.beanutils.converters.LongConverter - Converting 'Long' value '25' to type 'Long'
+20:54:20.006 [Test worker] DEBUG org.apache.commons.beanutils.converters.LongConverter -     No conversion required, value is already a Long
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.fieldmap.FieldMap - Getting ready to invoke write method on the destination object. Dest Obj: UserDTO, Dest value: 25
+20:54:20.006 [Test worker] DEBUG com.github.dozermapper.core.MappingProcessor - MAPPED: User.age --> UserDTO.age    VALUES: 25 --> 25    MAPID: 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

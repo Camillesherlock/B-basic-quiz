@@ -23,4 +23,10 @@ public class GlobalExceptionHandler {
         ErrorMessage errorMessage = new ErrorMessage(Instant.now().toString(), 404, "Not Found", message);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
     }
+    @ExceptionHandler(UserNotExistException.class)
+    public ResponseEntity<ErrorMessage> handle(UserNotExistException e) {
+        String message = e.getMessage();
+        ErrorMessage errorMessage = new ErrorMessage(Instant.now().toString(), 404, "Not Found", message);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
+    }
 }
