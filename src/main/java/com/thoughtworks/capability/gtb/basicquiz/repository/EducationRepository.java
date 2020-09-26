@@ -1,13 +1,11 @@
 package com.thoughtworks.capability.gtb.basicquiz.repository;
 
-import com.thoughtworks.capability.gtb.basicquiz.domain.Education;
-import org.springframework.data.repository.CrudRepository;
+import com.thoughtworks.capability.gtb.basicquiz.entity.Education;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface EducationRepository extends CrudRepository<Education,Long> {
-
-    List<Education> findEducationsByUserId(long userId);
+public interface EducationRepository extends JpaRepository<Education,Long> {
+    List<Education> findAllByUserId(Long id);
 }
